@@ -8,6 +8,9 @@ Thumbs.db
 
 # wordpress specific
 wp-config.php
+wp-content/plugins/jetpack
+wp-content/plugins/woocommerce
+wp-content/plugins/woocommerce-services
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/*
