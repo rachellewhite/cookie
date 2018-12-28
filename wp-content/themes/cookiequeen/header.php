@@ -14,8 +14,6 @@
 
 <body class="body home_body">
 
-<?php
-	include(locate_template('partials/home-nav.php'));
-?>
+<?php include(locate_template('partials/home-nav.php')); ?>
 
   <div class="global_site--contain">

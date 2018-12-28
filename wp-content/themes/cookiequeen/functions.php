@@ -45,32 +45,14 @@ function cookiequeen_nav()
 	);
 }
 
-// Load Scripts
-function cookiequeen_scripts()
-{
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-
-        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('html5blankscripts'); // Enqueue it!
-
-        wp_register_script('fancybox', get_template_directory_uri() . '/js/jquery.fanybox.min.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('fancybox'); // Enqueue it!
-
-        wp_register_script('webflow', get_template_directory_uri() . '/js/webflow.js', array('jquery'), '1.0.0'); // Custom scripts
-        wp_enqueue_script('webflow'); // Enqueue it!
-    }
-}
-add_action('init', 'cookiequeen_scripts'); // Add Custom Scripts to wp_head
-
-
 // Load styles
 function cookiequeen_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('webflow', get_template_directory_uri() . '/css/webflow.css', array(), '1.0', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
+    wp_enqueue_style('webflow'); // Enqueue it!
 
     wp_register_style('chc-style', get_template_directory_uri() . '/css/chc-style.css', array(), '1.0', 'all');
     wp_enqueue_style('chc-style'); // Enqueue it!
@@ -83,6 +65,30 @@ function cookiequeen_styles()
 }
 
 add_action('wp_enqueue_scripts', 'cookiequeen_styles'); // Add Theme Stylesheet
+
+
+
+// Load Scripts
+function cookiequeen_scripts()
+{
+    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+
+				wp_register_script('jquery-3.3.1', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), '1.0.0', true);
+        wp_enqueue_script('jquery-3.3.1'); // Enqueue it!
+
+        wp_register_script('webflow', get_template_directory_uri() . '/js/webflow.js', array(), '', true); // Custom scripts
+        wp_enqueue_script('webflow'); // Enqueue it!
+
+        wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '', true); // Custom scripts
+        wp_enqueue_script('html5blankscripts'); // Enqueue it!
+
+        wp_register_script('fancybox',get_template_directory_uri() . '/js/jquery.fancybox.min.js', array('jquery'), '1.0', true);
+				wp_enqueue_script('fancybox'); // Enqueue it!
+
+    }
+}
+add_action('init', 'cookiequeen_scripts'); // Add Custom Scripts to wp_head
+
 
 
 // Register HTML5 Blank Navigation

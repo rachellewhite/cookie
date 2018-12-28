@@ -1,11 +1,9 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
-
-			</footer>
-			<!-- /footer -->
 
 		</div>
 		<!-- /global_site--contain-->
+
+  <div class="global-footer-contain"></div>
+
 		<?php wp_footer(); ?>
 
 		<!-- analytics -->
