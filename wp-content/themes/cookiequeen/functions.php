@@ -15,48 +15,6 @@
 	Theme Support
 \*------------------------------------*/
 
-if (!isset($content_width))
-{
-    $content_width = 900;
-}
-
-if (function_exists('add_theme_support'))
-{
-    // Add Menu Support
-    add_theme_support('menus');
-
-    // // Add Thumbnail Theme Support
-    // add_theme_support('post-thumbnails');
-    // add_image_size('large', 700, '', true); // Large Thumbnail
-    // add_image_size('medium', 250, '', true); // Medium Thumbnail
-    // add_image_size('small', 120, '', true); // Small Thumbnail
-    // add_image_size('custom-size', 700, 200, true); // Custom Thumbnail Size call using the_post_thumbnail('custom-size');
-
-    // Add Support for Custom Backgrounds - Uncomment below if you're going to use
-    /*add_theme_support('custom-background', array(
-	'default-color' => 'FFF',
-	'default-image' => get_template_directory_uri() . '/img/bg.jpg'
-    ));*/
-
-    // Add Support for Custom Header - Uncomment below if you're going to use
-    /*add_theme_support('custom-header', array(
-	'default-image'			=> get_template_directory_uri() . '/img/headers/default.jpg',
-	'header-text'			=> false,
-	'default-text-color'		=> '000',
-	'width'				=> 1000,
-	'height'			=> 198,
-	'random-default'		=> false,
-	'wp-head-callback'		=> $wphead_cb,
-	'admin-head-callback'		=> $adminhead_cb,
-	'admin-preview-callback'	=> $adminpreview_cb
-    ));*/
-
-    // Enables post and comment RSS feed links to head
-    add_theme_support('automatic-feed-links');
-
-    // Localisation Support
-    load_theme_textdomain('html5blank', get_template_directory() . '/languages');
-}
 
 /*------------------------------------*\
 	Functions
@@ -95,32 +53,43 @@ function cookiequeen_scripts()
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
 
-        wp_register_script('fancybox', get_template_directory_uri() . '/js/lib/jquery.fanybox.min.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('fancybox', get_template_directory_uri() . '/js/jquery.fanybox.min.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('fancybox'); // Enqueue it!
+
+        wp_register_script('webflow', get_template_directory_uri() . '/js/webflow.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('webflow'); // Enqueue it!
     }
 }
+add_action('init', 'cookiequeen_scripts'); // Add Custom Scripts to wp_head
 
 
 // Load styles
 function cookiequeen_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+    wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
-    wp_enqueue_style('html5blank'); // Enqueue it!
+    wp_register_style('webflow', get_template_directory_uri() . '/css/webflow.css', array(), '1.0', 'all');
+    wp_enqueue_style('normalize'); // Enqueue it!
 
-    wp_register_style('fancybox', get_template_directory_uri() . '/jquery.fancybox.min.css', array(), '1.0', 'all');
+    wp_register_style('chc-style', get_template_directory_uri() . '/css/chc-style.css', array(), '1.0', 'all');
+    wp_enqueue_style('chc-style'); // Enqueue it!
+
+    wp_register_style('fancybox', get_template_directory_uri() . '/css/jquery.fancybox.min.css', array(), '1.0', 'all');
     wp_enqueue_style('fancybox'); // Enqueue it!
+
+    wp_register_style('custom-styles', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+    wp_enqueue_style('custom-styles'); // Enqueue it!
 }
+
+add_action('wp_enqueue_scripts', 'cookiequeen_styles'); // Add Theme Stylesheet
+
 
 // Register HTML5 Blank Navigation
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
         'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -289,10 +258,8 @@ function remove_thumbnail_dimensions( $html )
 \*------------------------------------*/
 
 // Add Actions
-add_action('init', 'cookiequeen_scripts'); // Add Custom Scripts to wp_head
 // add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 // add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('wp_enqueue_scripts', 'cookiequeen_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 add_action('init', 'create_post_type_design'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
