@@ -14,6 +14,11 @@
 
 <body class="body home_body">
 
-<?php include(locate_template('partials/home-nav.php')); ?>
+<?php if ( is_front_page() ) {
+  include(locate_template('partials/home-nav.php'));
+}
+else {
+    include(locate_template('partials/page-nav.php'));
+} ?>
 
   <div class="global_site--contain">

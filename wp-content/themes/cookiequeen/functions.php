@@ -54,8 +54,8 @@ function cookiequeen_styles()
     wp_register_style('webflow', get_template_directory_uri() . '/css/webflow.css', array(), '1.0', 'all');
     wp_enqueue_style('webflow'); // Enqueue it!
 
-    wp_register_style('chc-style', get_template_directory_uri() . '/css/chc-style.css', array(), '1.0', 'all');
-    wp_enqueue_style('chc-style'); // Enqueue it!
+    wp_register_style('chc-webflow', get_template_directory_uri() . '/css/chc-webflow.css', array(), '1.0', 'all');
+    wp_enqueue_style('chc-webflow'); // Enqueue it!
 
     wp_register_style('fancybox', get_template_directory_uri() . '/css/jquery.fancybox.min.css', array(), '1.0', 'all');
     wp_enqueue_style('fancybox'); // Enqueue it!
