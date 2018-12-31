@@ -22,3 +22,4 @@ else {
 } ?>
 
   <div class="global_site--contain">
+        <div class="global--content--contain">

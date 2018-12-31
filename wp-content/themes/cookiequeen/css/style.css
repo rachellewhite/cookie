@@ -1,0 +1,18 @@
+
+
+
+
+
+/* HOMEPAGE */
+
+  /* news section */
+  .news_title-1 {
+  max-width: 500px;
+}
+  .news_content--text > p {
+  font-family: Niramit, sans-serif;
+  color: #fff;
+  font-size: 1em;
+  line-height: 1.6em;
+  letter-spacing: 0.5px;
+}

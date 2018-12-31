@@ -7,7 +7,6 @@
 
 <?php get_header(); ?>
 
-    <div class="global--content--contain">
       <div class="home_section-1--contain">
         <div class="home_s1--block">
           <div class="columns w-row">
@@ -49,13 +48,27 @@
         <div class="home_section-3--columns w-row">
           <div class="home_section3_quote w-col w-col-5 w-col-stack"><img src="<?= get_template_directory_uri(); ?>/images/ch_home-taste.gif" alt="" class="home-s3-taste-quote--img"></div>
           <div class="home_news-block--contain w-col w-col-7 w-col-stack"><img src="<?= get_template_directory_uri(); ?>/images/ch_home-s3--title.png" width="240.5" alt="" class="home-s3-news-title-img">
-            <h1 class="news_title-1">New Fall Designs</h1>
-            <h6 class="news_title--date">november 28, 2018</h6>
-            <p class="news_content--text">New designs have been added to the Fall/Thanksgiving category. I am currently taking orders for Thanksgiving which is on Thursday November 22. The last day I will ship orders will be Saturday, November 17th. And the last day for local deliveries will be Tuesday, November 20th. Please get your order to me as soon as you can.  November is already filling up.</p>
-            <div class="news_block--button">Request A Quote</div>
+          <?php
+               // Define our WP Query Parameters
+               $query_options = array(
+                   'posts_per_page' => 1,
+               );
+               $the_query = new WP_Query( $query_options );
+
+               while ($the_query -> have_posts()) : $the_query -> the_post();
+          ?>
+
+            <h1 class="news_title-1"><?php the_title(); ?></h1>
+
+            <div class="news_content--text"><?php the_content(); ?></div>
+
+          <?php
+               endwhile;
+               wp_reset_postdata();
+          ?>
+            <a href="quote"><div class="news_block--button">Request A Quote</div></a>
           </div>
         </div>
       </div>
-    </div>
 
 <?php get_footer(); ?>

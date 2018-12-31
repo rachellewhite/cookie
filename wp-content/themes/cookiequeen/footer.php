@@ -1,3 +1,5 @@
+    </div>
+		<!-- /global_content--contain--> <!-- Keeps footer pushed down -->
 
 		</div>
 		<!-- /global_site--contain-->
