@@ -11,6 +11,7 @@
  * the readme will list any important changes.
  *
  * @see     https://docs.woocommerce.com/document/template-structure/
+ * @author  WooThemes
  * @package WooCommerce/Templates
  * @version 2.6.1
  */
@@ -19,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<div class="col w-col w-col-3 w-col-medium-3 w-col-small-6 w-col-tiny-6" <?php wc_product_cat_class( '', $category ); ?>>
+<li <?php wc_product_cat_class( '', $category ); ?>>
 	<?php
 	/**
 	 * woocommerce_before_subcategory hook.
@@ -53,4 +54,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	 * @hooked woocommerce_template_loop_category_link_close - 10
 	 */
 	do_action( 'woocommerce_after_subcategory', $category ); ?>
-</div>
+</li>

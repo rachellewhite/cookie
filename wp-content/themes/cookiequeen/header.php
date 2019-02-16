@@ -12,7 +12,7 @@
   <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
 </head>
 
-<body class="body home_body">
+<body <?php body_class("body"); ?>>
 
 <?php if ( is_front_page() ) {
   include(locate_template('partials/home-nav.php'));

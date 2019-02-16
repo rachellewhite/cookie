@@ -5,7 +5,13 @@
 
 /* HOMEPAGE */
 
-  /* news section */
+body.page {
+background-image: none;
+}
+body.home {
+background-image: url(../images/ch_home-s1--bg.jpg);
+}
+/* news section */
   .news_title-1 {
   max-width: 500px;
 }
@@ -16,3 +22,8 @@
   line-height: 1.6em;
   letter-spacing: 0.5px;
 }
+
+
+
+
+/* FONTS */

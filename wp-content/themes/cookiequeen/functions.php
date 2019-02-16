@@ -49,19 +49,25 @@ function cookiequeen_nav()
 function cookiequeen_styles()
 {
     wp_register_style('normalize', get_template_directory_uri() . '/css/normalize.css', array(), '', 'all');
-    wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('webflow', get_template_directory_uri() . '/css/webflow.css', array(), '1.0', 'all');
-    wp_enqueue_style('webflow'); // Enqueue it!
 
     wp_register_style('chc-webflow', get_template_directory_uri() . '/css/chc-webflow.css', array(), '1.0', 'all');
-    wp_enqueue_style('chc-webflow'); // Enqueue it!
 
     wp_register_style('fancybox', get_template_directory_uri() . '/css/jquery.fancybox.min.css', array(), '1.0', 'all');
-    wp_enqueue_style('fancybox'); // Enqueue it!
+
+    wp_register_style('woocommerce', get_template_directory_uri() . '/css/chc-woocommerce.css', array(), '1.0', 'all');
 
     wp_register_style('custom-styles', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
+
+
+    wp_enqueue_style('normalize'); // Enqueue it!
+    wp_enqueue_style('webflow'); // Enqueue it!
+    wp_enqueue_style('chc-webflow'); // Enqueue it!
+    wp_enqueue_style('fancybox'); // Enqueue it!
+    wp_enqueue_style('woocommerce'); // Enqueue it!
     wp_enqueue_style('custom-styles'); // Enqueue it!
+
 }
 
 add_action('wp_enqueue_scripts', 'cookiequeen_styles'); // Add Theme Stylesheet
@@ -370,5 +376,40 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 {
     return '<h2>' . $content . '</h2>';
 }
+
+
+// WOOCOMMERCE function overrides
+
+
+// Replace product title in category
+function replace_loop_cat_title() {
+    // remove the default behavior
+    remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10);
+
+    // Replace by your custom behavior
+    add_action( 'woocommerce_shop_loop_subcategory_title', 'chc_template_loop_category_title', 10);
+    function chc_template_loop_category_title( $category ) { ?>
+		<div class="gallery_pg_cat-title">
+			<?php echo esc_html( $category->name ); ?>
+		</div>
+<?php    }
+}
+add_action( 'init', 'replace_loop_cat_title' );
+
+// Replace product title in category
+function replace_loop_product_title() {
+    // remove the default behavior
+    remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+
+    // Replace by your custom behavior
+    add_action( 'woocommerce_shop_loop_item_title', 'chc_template_loop_product_title', 10);
+    function chc_template_loop_product_title() {
+				echo '<div class="gallery_pg_cat-title">' . get_the_title() . '</div>';
+    }
+}
+add_action( 'init', 'replace_loop_product_title' );
+
+
+
 
 ?>
