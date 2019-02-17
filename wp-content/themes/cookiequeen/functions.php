@@ -409,12 +409,46 @@ function replace_loop_product_title() {
 }
 add_action( 'init', 'replace_loop_product_title' );
 
-add_action( 'after_setup_theme', 'yourtheme_setup' );
 
-function yourtheme_setup() {
-add_theme_support( 'wc-product-gallery-zoom' );
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
+// Replace the link that opens the product page with a fancybox call
+
+function replace_template_loop_product_link_open() {
+    // remove the default behavior
+    remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+
+    // Replace by your custom behavior
+    add_action( 'woocommerce_before_shop_loop_item', 'chc_template_loop_product_link_open', 10 );
+    function chc_template_loop_product_link_open($attachment_id, $main_image = false) {
+			global $product;
+
+			$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
+			$post_thumbnail_id = $product->get_image_id();
+			$wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
+				'woocommerce-product-gallery',
+				'woocommerce-product-gallery--' . ( $product->get_image_id() ? 'with-images' : 'without-images' ),
+				'woocommerce-product-gallery--columns-' . absint( $columns ),
+				'images',
+			) );
+			?>
+
+					<?php
+					if ( $product->get_image_id() ) {
+						$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
+					} else {
+						$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+						$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
+						$html .= '</div>';
+					}
+
+					echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+
+					do_action( 'woocommerce_product_thumbnails' );
+					?>
+
+  <?php  }
 }
+add_action( 'init', 'replace_template_loop_product_link_open' );
+
+
 
 ?>
