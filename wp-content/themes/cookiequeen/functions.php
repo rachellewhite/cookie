@@ -418,7 +418,8 @@ function replace_template_loop_product_link_open() {
 
     // Replace by your custom behavior
     add_action( 'woocommerce_before_shop_loop_item', 'chc_template_loop_product_link_open', 10 );
-    function chc_template_loop_product_link_open($attachment_id, $main_image = false) {
+
+    function chc_template_loop_product_link_open() {
 			global $product;
 
 			$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
@@ -431,23 +432,37 @@ function replace_template_loop_product_link_open() {
 			) );
 			?>
 
-					<?php
-					if ( $product->get_image_id() ) {
-						$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-					} else {
-						$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-						$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-						$html .= '</div>';
-					}
+			<?php
+			if ( $product->get_image_id() ) {
+				$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
+			} else {
+				$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
+				$html .= '</div>';
+			}
 
-					echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
 
-					do_action( 'woocommerce_product_thumbnails' );
-					?>
+			?>
 
   <?php  }
 }
 add_action( 'init', 'replace_template_loop_product_link_open' );
+
+
+// Replace interior of get product image
+
+function replace_wc_get_gallery_image_html() {
+    // remove the default behavior
+    remove_action( 'woocommerce_shop_loop_item_title', 'wc_get_gallery_image_html', 10);
+
+    // Replace by your custom behavior
+    add_action( 'woocommerce_shop_loop_item_title', 'chc_get_gallery_image_html', 10);
+    function chc_get_gallery_image_html() {
+				echo 'Is this working';
+    }
+}
+add_action( 'init', 'replace_wc_get_gallery_image_html' );
 
 
 
