@@ -27,6 +27,10 @@
               <h2 class="gallery_block-1--subtitle"><a href="#" class="gallery_block1-title--link">view all &gt;</a></h2>
             </div>
           </div>
+        <?php echo do_shortcode('[recent_products per_page="3" columns="3" orderby="title" order="desc"]'
+        ); ?>
+
+<!--
           <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
             <div class="gallery_block-img--contain">
               <div data-w-id="dad8b7b4-5ec9-0d88-d95c-519b2c606c3a" style="opacity:0" class="gallery_img--overlay"></div>
@@ -41,7 +45,7 @@
             <div class="gallery_block-img--contain">
               <div data-w-id="ac8ca69a-4de0-43e0-45c7-28f5f6f59b2e" style="opacity:0" class="gallery_img--overlay"></div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="home_section-3--contain">
