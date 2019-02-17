@@ -1,1 +1,4 @@
 /* WOOCOMMERCE OVERRIDES */
+a.button.product_type_simple {
+    display: none;
+}

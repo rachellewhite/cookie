@@ -409,8 +409,7 @@ function replace_loop_product_title() {
 }
 add_action( 'init', 'replace_loop_product_title' );
 
-
-// Replace the link that opens the product page with a fancybox call
+// Replace the product thumbnail link with the full image link
 
 function replace_template_loop_product_link_open() {
     // remove the default behavior
@@ -436,7 +435,7 @@ function replace_template_loop_product_link_open() {
 			if ( $product->get_image_id() ) {
 				$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
 			} else {
-				$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
+				$html  = '<div data-fancybox class="woocommerce-product-gallery__image--placeholder">';
 				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
 				$html .= '</div>';
 			}
@@ -450,7 +449,7 @@ function replace_template_loop_product_link_open() {
 add_action( 'init', 'replace_template_loop_product_link_open' );
 
 
-// Replace interior of get product image
+// Replace the link that opens the product page with a fancybox call
 
 function replace_wc_get_gallery_image_html() {
     // remove the default behavior
@@ -458,9 +457,27 @@ function replace_wc_get_gallery_image_html() {
 
     // Replace by your custom behavior
     add_action( 'woocommerce_shop_loop_item_title', 'chc_get_gallery_image_html', 10);
-    function chc_get_gallery_image_html() {
-				echo 'Is this working';
-    }
+    function chc_get_gallery_image_html( $attachment_id, $main_image = false ) {
+					$flexslider        = (bool) apply_filters( 'woocommerce_single_product_flexslider_enabled', get_theme_support( 'wc-product-gallery-slider' ) );
+					$gallery_thumbnail = wc_get_image_size( 'gallery_thumbnail' );
+					$thumbnail_size    = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
+					$image_size        = apply_filters( 'woocommerce_gallery_image_size', $flexslider || $main_image ? 'woocommerce_single' : $thumbnail_size );
+					$full_size         = apply_filters( 'woocommerce_gallery_full_size', apply_filters( 'woocommerce_product_thumbnails_large_size', 'full' ) );
+					$thumbnail_src     = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
+					$full_src          = wp_get_attachment_image_src( $attachment_id, $full_size );
+					$image             = wp_get_attachment_image( $attachment_id, $image_size, false, array(
+						'title'                   => get_post_field( 'post_title', $attachment_id ),
+						'data-caption'            => get_post_field( 'post_excerpt', $attachment_id ),
+						'data-src'                => $full_src[0],
+						'data-large_image'        => $full_src[0],
+						'data-large_image_width'  => $full_src[1],
+						'data-large_image_height' => $full_src[2],
+						'class'                   => $main_image ? 'wp-post-image' : '',
+					) );
+
+					return '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_src[0] ) . '">' . $image . '</a></div>';
+				}
+
 }
 add_action( 'init', 'replace_wc_get_gallery_image_html' );
 
