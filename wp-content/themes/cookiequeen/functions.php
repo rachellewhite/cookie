@@ -95,15 +95,14 @@ function cookiequeen_scripts()
 }
 add_action('init', 'cookiequeen_scripts'); // Add Custom Scripts to wp_head
 
+// Register main menu
 
-
-// Register HTML5 Blank Navigation
-function register_html5_menu()
-{
-    register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-    ));
+function chc_custom_new_menu() {
+  register_nav_menu('nav-menu',__( 'Nav Menu' ));
+  // register_nav_menu('modal-menu',__( 'Modal Menu' ));
 }
+add_action( 'init', 'chc_custom_new_menu' );
+
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 function my_wp_nav_menu_args($args = '')
