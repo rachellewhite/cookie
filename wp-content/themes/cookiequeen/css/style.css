@@ -1,8 +1,4 @@
 
-
-
-
-
 /* HOMEPAGE */
 
 body.page {
@@ -23,13 +19,5 @@ background-image: url(../images/ch_home-s1--bg.jpg);
   letter-spacing: 0.5px;
 }
 
-
-/* recently added products */
-.home_section-2--columns  .gallery_section1--contain {
-
-}
-.woocommerce-page.columns-3 ul.products li.product, .woocommerce.columns-3 ul.products li.product {
-    width: 25%;
-}
 
 /* FONTS */

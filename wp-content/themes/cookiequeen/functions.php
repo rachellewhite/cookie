@@ -20,30 +20,6 @@
 	Functions
 \*------------------------------------*/
 
-// Register navbar
-function cookiequeen_nav()
-{
-	wp_nav_menu(
-	array(
-		'theme_location'  => 'header-menu',
-		'menu'            => '',
-		'container'       => 'div',
-		'container_class' => 'menu-{menu slug}-container',
-		'container_id'    => '',
-		'menu_class'      => 'menu',
-		'menu_id'         => '',
-		'echo'            => true,
-		'fallback_cb'     => 'wp_page_menu',
-		'before'          => '',
-		'after'           => '',
-		'link_before'     => '',
-		'link_after'      => '',
-		'items_wrap'      => '<ul>%3$s</ul>',
-		'depth'           => 0,
-		'walker'          => ''
-		)
-	);
-}
 
 // Load styles
 function cookiequeen_styles()
@@ -63,9 +39,10 @@ function cookiequeen_styles()
 
     wp_enqueue_style('normalize'); // Enqueue it!
     wp_enqueue_style('webflow'); // Enqueue it!
-    wp_enqueue_style('chc-webflow'); // Enqueue it!
     wp_enqueue_style('fancybox'); // Enqueue it!
+    wp_enqueue_style('chc-webflow'); // Enqueue it!
     wp_enqueue_style('woocommerce'); // Enqueue it!
+    wp_enqueue_style('fancybox'); // Enqueue it!
     wp_enqueue_style('custom-styles'); // Enqueue it!
 
 }
@@ -82,13 +59,13 @@ function cookiequeen_scripts()
 				wp_register_script('jquery-3.3.1', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), '1.0.0', true);
         wp_enqueue_script('jquery-3.3.1'); // Enqueue it!
 
-        wp_register_script('webflow', get_template_directory_uri() . '/js/webflow.js', array(), '', true); // Custom scripts
+        wp_register_script('webflow', get_template_directory_uri() . '/js/webflow.js', array('jquery-3.3.1'), '', true); // Custom scripts
         wp_enqueue_script('webflow'); // Enqueue it!
 
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '', true); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
 
-        wp_register_script('fancybox',get_template_directory_uri() . '/js/jquery.fancybox.min.js', array('jquery'), '1.0', true);
+        wp_register_script('fancybox',get_template_directory_uri() . '/js/jquery.fancybox.min.js', array('jquery-3.3.1'), '1.0', true);
 				wp_enqueue_script('fancybox'); // Enqueue it!
 
     }
@@ -141,31 +118,6 @@ function add_slug_to_body_class($classes)
     return $classes;
 }
 
-// // If Dynamic Sidebar Exists
-// if (function_exists('register_sidebar'))
-// {
-//     // Define Sidebar Widget Area 1
-//     register_sidebar(array(
-//         'name' => __('Widget Area 1', 'html5blank'),
-//         'description' => __('Description for this widget-area...', 'html5blank'),
-//         'id' => 'widget-area-1',
-//         'before_widget' => '<div id="%1$s" class="%2$s">',
-//         'after_widget' => '</div>',
-//         'before_title' => '<h3>',
-//         'after_title' => '</h3>'
-//     ));
-//
-//     // Define Sidebar Widget Area 2
-//     register_sidebar(array(
-//         'name' => __('Widget Area 2', 'html5blank'),
-//         'description' => __('Description for this widget-area...', 'html5blank'),
-//         'id' => 'widget-area-2',
-//         'before_widget' => '<div id="%1$s" class="%2$s">',
-//         'after_widget' => '</div>',
-//         'before_title' => '<h3>',
-//         'after_title' => '</h3>'
-//     ));
-// }
 
 // Remove wp_head() injected Recent Comment styles
 function my_remove_recent_comments_style()
@@ -245,34 +197,12 @@ function remove_thumbnail_dimensions( $html )
     return $html;
 }
 
-// // Custom Gravatar in Settings > Discussion
-// function html5blankgravatar ($avatar_defaults)
-// {
-//     $myavatar = get_template_directory_uri() . '/img/gravatar.jpg';
-//     $avatar_defaults[$myavatar] = "Custom Gravatar";
-//     return $avatar_defaults;
-// }
-//
-// // Threaded Comments
-// function enable_threaded_comments()
-// {
-//     if (!is_admin()) {
-//         if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-//             wp_enqueue_script('comment-reply');
-//         }
-//     }
-// }
-
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
 
-// Add Actions
-// add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
-// add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
-add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_design'); // Add our HTML5 Blank Custom Post Type
+
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 
@@ -311,175 +241,78 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
-// Shortcodes
-add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
-add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
 
-// Shortcodes above would be nested like this -
-// [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
-
-/*------------------------------------*\
-	Custom Post Types
-\*------------------------------------*/
-//
-// // Create 1 Custom Post type for a Demo, called HTML5-Blank
-// function create_post_type_design()
-// {
-//     register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-//     register_taxonomy_for_object_type('post_tag', 'html5-blank');
-//     register_post_type('html5-blank', // Register Custom Post Type
-//         array(
-//         'labels' => array(
-//             'name' => __('Designs', 'html5blank'), // Rename these to suit
-//             'singular_name' => __('Design', 'html5blank'),
-//             'add_new' => __('Add New', 'html5blank'),
-//             'add_new_item' => __('Add New Design', 'html5blank'),
-//             'edit' => __('Edit', 'html5blank'),
-//             'edit_item' => __('Edit Design', 'html5blank'),
-//             'new_item' => __('New Design', 'html5blank'),
-//             'view' => __('View Design', 'html5blank'),
-//             'view_item' => __('View Design', 'html5blank'),
-//             'search_items' => __('Search Designs', 'html5blank'),
-//             'not_found' => __('No Designs found', 'html5blank'),
-//             'not_found_in_trash' => __('No Designs found in Trash', 'html5blank')
-//         ),
-//         'public' => true,
-//         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
-//         'has_archive' => true,
-//         'supports' => array(
-//             'title',
-//             'editor',
-//             'excerpt',
-//             'thumbnail'
-//         ), // Go to Dashboard Custom HTML5 Blank post for supports
-//         'can_export' => true, // Allows export in Tools > Export
-//         'taxonomies' => array(
-//             'post_tag',
-//             'category'
-//         ) // Add Category and Post Tags support
-//     ));
-// }
-
-/*------------------------------------*\
-	ShortCode Functions
-\*------------------------------------*/
-
-// Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
-    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
+/**
+ * Snippet Name: Disable auto creating of image sizes
+ * Snippet URL: http://www.wpcustoms.net/snippets/disable-auto-creating-image-sizes/
+ */
+ function wpc_unset_imagesizes($sizes){
+    // unset( $sizes['thumbnail']);
+    unset( $sizes['medium']);
+    unset( $sizes['large']);
 }
+add_filter('intermediate_image_sizes_advanced', 'wpc_unset_imagesizes' );
 
-// Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-{
-    return '<h2>' . $content . '</h2>';
-}
+//* Register Custom Post Type Product
 
 
-// WOOCOMMERCE function overrides
+// Register Custom Post Type Cast
+// Post Type Key: cast
+function create_product_cpt() {
 
-
-// Replace product title in category
-function replace_loop_cat_title() {
-    // remove the default behavior
-    remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10);
-
-    // Replace by your custom behavior
-    add_action( 'woocommerce_shop_loop_subcategory_title', 'chc_template_loop_category_title', 10);
-    function chc_template_loop_category_title( $category ) { ?>
-		<div class="gallery_pg_cat-title">
-			<?php echo esc_html( $category->name ); ?>
-		</div>
-<?php    }
-}
-add_action( 'init', 'replace_loop_cat_title' );
-
-// Replace product title in category
-function replace_loop_product_title() {
-    // remove the default behavior
-    remove_action( 'woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
-
-    // Replace by your custom behavior
-    add_action( 'woocommerce_shop_loop_item_title', 'chc_template_loop_product_title', 10);
-    function chc_template_loop_product_title() {
-				echo '<div class="gallery_pg_cat-title">' . get_the_title() . '</div>';
-    }
-}
-add_action( 'init', 'replace_loop_product_title' );
-
-// Replace the product thumbnail link with the full image link
-
-function replace_template_loop_product_link_open() {
-    // remove the default behavior
-    remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
-
-    // Replace by your custom behavior
-    add_action( 'woocommerce_before_shop_loop_item', 'chc_template_loop_product_link_open', 10 );
-
-    function chc_template_loop_product_link_open() {
-			global $product;
-
-			$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
-			$post_thumbnail_id = $product->get_image_id();
-			$wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
-				'woocommerce-product-gallery',
-				'woocommerce-product-gallery--' . ( $product->get_image_id() ? 'with-images' : 'without-images' ),
-				'woocommerce-product-gallery--columns-' . absint( $columns ),
-				'images',
-			) );
-			?>
-
-			<?php
-			if ( $product->get_image_id() ) {
-				$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-			} else {
-				$html  = '<div data-fancybox class="woocommerce-product-gallery__image--placeholder">';
-				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-				$html .= '</div>';
-			}
-
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-			?>
-
-  <?php  }
-}
-add_action( 'init', 'replace_template_loop_product_link_open' );
-
-
-// Replace the link that opens the product page with a fancybox call
-
-function replace_wc_get_gallery_image_html() {
-    // remove the default behavior
-    remove_action( 'woocommerce_shop_loop_item_title', 'wc_get_gallery_image_html', 10);
-
-    // Replace by your custom behavior
-    add_action( 'woocommerce_shop_loop_item_title', 'chc_get_gallery_image_html', 10);
-    function chc_get_gallery_image_html( $attachment_id, $main_image = false ) {
-					$flexslider        = (bool) apply_filters( 'woocommerce_single_product_flexslider_enabled', get_theme_support( 'wc-product-gallery-slider' ) );
-					$gallery_thumbnail = wc_get_image_size( 'gallery_thumbnail' );
-					$thumbnail_size    = apply_filters( 'woocommerce_gallery_thumbnail_size', array( $gallery_thumbnail['width'], $gallery_thumbnail['height'] ) );
-					$image_size        = apply_filters( 'woocommerce_gallery_image_size', $flexslider || $main_image ? 'woocommerce_single' : $thumbnail_size );
-					$full_size         = apply_filters( 'woocommerce_gallery_full_size', apply_filters( 'woocommerce_product_thumbnails_large_size', 'full' ) );
-					$thumbnail_src     = wp_get_attachment_image_src( $attachment_id, $thumbnail_size );
-					$full_src          = wp_get_attachment_image_src( $attachment_id, $full_size );
-					$image             = wp_get_attachment_image( $attachment_id, $image_size, false, array(
-						'title'                   => get_post_field( 'post_title', $attachment_id ),
-						'data-caption'            => get_post_field( 'post_excerpt', $attachment_id ),
-						'data-src'                => $full_src[0],
-						'data-large_image'        => $full_src[0],
-						'data-large_image_width'  => $full_src[1],
-						'data-large_image_height' => $full_src[2],
-						'class'                   => $main_image ? 'wp-post-image' : '',
-					) );
-
-					return '<div data-thumb="' . esc_url( $thumbnail_src[0] ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_src[0] ) . '">' . $image . '</a></div>';
-				}
+	$labels = array(
+		'name' => __( 'Product', 'Post Type General Name', 'textdomain' ),
+		'singular_name' => __( 'Product', 'Post Type Singular Name', 'textdomain' ),
+		'menu_name' => __( 'Products', 'textdomain' ),
+		'name_admin_bar' => __( 'Products', 'textdomain' ),
+		'archives' => __( 'Product Archives', 'textdomain' ),
+		'attributes' => __( 'Product Attributes', 'textdomain' ),
+		'parent_item_colon' => __( 'Parent Product:', 'textdomain' ),
+		'all_items' => __( 'All Products', 'textdomain' ),
+		'add_new_item' => __( 'Add New Product', 'textdomain' ),
+		'add_new' => __( 'Add New', 'textdomain' ),
+		'new_item' => __( 'New Product', 'textdomain' ),
+		'edit_item' => __( 'Edit Product', 'textdomain' ),
+		'update_item' => __( 'Update Product', 'textdomain' ),
+		'view_item' => __( 'View Product', 'textdomain' ),
+		'view_items' => __( 'View Products', 'textdomain' ),
+		'search_items' => __( 'Search Products', 'textdomain' ),
+		'not_found' => __( 'Not found', 'textdomain' ),
+		'not_found_in_trash' => __( 'Not found in Trash', 'textdomain' ),
+		'featured_image' => __( 'Featured Image', 'textdomain' ),
+		'set_featured_image' => __( 'Set featured image', 'textdomain' ),
+		'remove_featured_image' => __( 'Remove featured image', 'textdomain' ),
+		'use_featured_image' => __( 'Use as featured image', 'textdomain' ),
+		'insert_into_item' => __( 'Insert into Product', 'textdomain' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Product', 'textdomain' ),
+		'items_list' => __( 'Products list', 'textdomain' ),
+		'items_list_navigation' => __( 'Products list navigation', 'textdomain' ),
+		'filter_items_list' => __( 'Filter Products list', 'textdomain' ),
+	);
+	$args = array(
+		'label' => __( 'Product', 'textdomain' ),
+		'description' => __( 'Products', 'textdomain' ),
+		'labels' => $labels,
+		'menu_icon' => 'dashicons-id',
+		'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'post-formats', ),
+		'taxonomies' => array(),
+		'public' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'menu_position' => 5,
+		'show_in_admin_bar' => true,
+		'show_in_nav_menus' => true,
+		'can_export' => true,
+		'has_archive' => true,
+		'hierarchical' => false,
+		'exclude_from_search' => false,
+		'show_in_rest' => true,
+		'publicly_queryable' => true,
+		'capability_type' => 'post',
+	);
+	register_post_type( 'product', $args );
 
 }
-add_action( 'init', 'replace_wc_get_gallery_image_html' );
-
-
+add_action( 'init', 'create_product_cpt', 0 );
 
 ?>
