@@ -296,7 +296,7 @@ function create_product_cpt() {
 		'label' => __( 'Product', 'textdomain' ),
 		'description' => __( 'Products', 'textdomain' ),
 		'labels' => $labels,
-		'menu_icon' => 'dashicons-id',
+		'menu_icon' => 'dashicons-store',
 		'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'post-formats', ),
 		'taxonomies' => array('category'),
 		'public' => true,
