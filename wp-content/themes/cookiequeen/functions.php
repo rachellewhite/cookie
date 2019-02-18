@@ -298,7 +298,7 @@ function create_product_cpt() {
 		'labels' => $labels,
 		'menu_icon' => 'dashicons-id',
 		'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'post-formats', ),
-		'taxonomies' => array(),
+		'taxonomies' => array('category'),
 		'public' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
