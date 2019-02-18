@@ -242,22 +242,25 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 
-/**
- * Snippet Name: Disable auto creating of image sizes
- * Snippet URL: http://www.wpcustoms.net/snippets/disable-auto-creating-image-sizes/
- */
- function wpc_unset_imagesizes($sizes){
-    // unset( $sizes['thumbnail']);
-    unset( $sizes['medium']);
-    unset( $sizes['large']);
-}
-add_filter('intermediate_image_sizes_advanced', 'wpc_unset_imagesizes' );
+// /**
+//  * Snippet Name: Disable auto creating of image sizes
+//  * Snippet URL: http://www.wpcustoms.net/snippets/disable-auto-creating-image-sizes/
+//  */
+//  function wpc_unset_imagesizes($sizes){
+//     // unset( $sizes['thumbnail']);
+//     unset( $sizes['medium']);
+//     unset( $sizes['large']);
+// }
+// add_filter('intermediate_image_sizes_advanced', 'wpc_unset_imagesizes' );
 
 //* Register Custom Post Type Product
 
 
-// Register Custom Post Type Cast
-// Post Type Key: cast
+add_theme_support( 'post-thumbnails', array( 'post','product' ) );
+
+
+// Register Custom Post Type Product
+// Post Type Key: product
 function create_product_cpt() {
 
 	$labels = array(
