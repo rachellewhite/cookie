@@ -242,21 +242,12 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 
-// /**
-//  * Snippet Name: Disable auto creating of image sizes
-//  * Snippet URL: http://www.wpcustoms.net/snippets/disable-auto-creating-image-sizes/
-//  */
-//  function wpc_unset_imagesizes($sizes){
-//     // unset( $sizes['thumbnail']);
-//     unset( $sizes['medium']);
-//     unset( $sizes['large']);
-// }
-// add_filter('intermediate_image_sizes_advanced', 'wpc_unset_imagesizes' );
+add_action( 'after_setup_theme', 'chc_theme_setup' );
+function chc_theme_setup() {
+    add_image_size( 'gallery-thumb', 300, 300 ); // 300 pixels wide (and unlimited height)
+}
 
-//* Register Custom Post Type Product
-
-
-add_theme_support( 'post-thumbnails', array( 'post','product' ) );
+add_theme_support( 'post-thumbnails', array( 'post','product', 'gallery' ) );
 
 
 // Register Custom Post Type Product
