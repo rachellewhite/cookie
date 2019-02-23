@@ -6,8 +6,6 @@
  ?>
 <?php get_header(); ?>
       <div class="gallery_section1--contain">
-
-
   <?php
     $gallery_items = get_field('gallery_items');
     $item_row_counter = 0;
@@ -33,7 +31,7 @@
         <div class="col w-col w-col-3 w-col-medium-3 w-col-small-6 w-col-tiny-6">
           <a href="<?= get_the_post_thumbnail_url(); ?>" data-fancybox="gallery">
             <div class="product-thumb--contain">
-              <?php the_post_thumbnail(); ?>
+              <?php the_post_thumbnail(array(300,300)); ?>
               </div>
           </a>
         </div>

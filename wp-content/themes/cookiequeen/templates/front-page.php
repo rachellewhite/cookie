@@ -28,21 +28,48 @@
             </div>
           </div>
 
-          <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
-            <div class="gallery_block-img--contain">
-              <div class="gallery_img--overlay"></div>
-            </div>
-          </div>
-          <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
-            <div class="gallery_block-img--contain">
-              <div data-w-id="cbbdf117-c446-64bc-75bb-1b95fdf6194b" style="opacity:0" class="gallery_img--overlay"></div>
-            </div>
-          </div>
-          <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
-            <div class="gallery_block-img--contain">
-              <div data-w-id="ac8ca69a-4de0-43e0-45c7-28f5f6f59b2e" style="opacity:0" class="gallery_img--overlay"></div>
-            </div>
-          </div>
+            <?php
+              $featured_products = get_field('featured_products');
+              $item_row_counter = 0;
+            ?>
+            <?php if( $featured_products ): ?>
+
+              <?php
+                $counter = 0;
+                $length = count($featured_products);
+              ?>
+
+              <?php foreach( $featured_products as $post): ?>
+                <?php setup_postdata($post); ?>
+
+                  <?php
+                    $item_row_counter++;
+                    if( $item_row_counter == 1 || $item_row_counter % 3 == 1 ) {
+                      echo '';
+                    }
+                  ?>
+                  <?php if ( has_post_thumbnail() ): ?>
+
+                  <div data-src="<?= get_the_post_thumbnail_url(); ?>" class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack" data-fancybox="gallery" style="background-image: url('<?php the_post_thumbnail_url(array(500,500)); ?>'); background-size: cover; background-position: center;">
+
+                <div class="gallery_block-img--contain">
+                        <!-- <?php the_post_thumbnail(array(300,300)); ?> -->
+                        </div>
+
+                  </div>
+                    <?php endif; ?>
+
+                  <?php if( $item_row_counter % 3 == 0 || $counter == ($length - 1) ){  echo '';
+                  }
+                    $counter++;
+                  ?>
+
+                <?php endforeach; ?>
+              <?php wp_reset_postdata(); ?>
+
+            <?php endif; ?>
+
+
         </div>
       </div>
       <div class="home_section-3--contain">
