@@ -870,8 +870,11 @@ em {
 
 .gallery_section1--contain {
   display: block;
+  max-width: 1200px;
   min-height: 39em;
   margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
   padding-right: 20px;
   padding-left: 22px;
   -webkit-box-orient: vertical;
@@ -944,6 +947,15 @@ em {
 .product-thumb--contain {
   max-height: 300px;
   max-width: 300px;
+}
+
+.gallery-summary-text {
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Niramit, sans-serif;
+  font-size: 16px;
+  text-align: center;
 }
 
 @media (max-width: 991px) {

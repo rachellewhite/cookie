@@ -7,6 +7,12 @@ background-image: none;
 body.home {
 background-image: url(../images/ch_home-s1--bg.jpg);
 }
+
+  /* featured products */
+.home_section-2--columns.w-row .gallery_column--contain  {
+  cursor: pointer;
+  height: 300px;
+}
 /* news section */
   .news_title-1 {
   max-width: 500px;

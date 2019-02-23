@@ -242,11 +242,23 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
 
-add_action( 'after_setup_theme', 'chc_theme_setup' );
-function chc_theme_setup() {
-    add_image_size( 'gallery-thumb', 300, 300 ); // 300 pixels wide (and unlimited height)
+function remove_extra_image_sizes() {
+    foreach ( get_intermediate_image_sizes() as $size ) {
+        if ( !in_array( $size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
+            remove_image_size( $size );
+        }
+    }
 }
+add_filter( 'intermediate_image_sizes', function( $sizes )
+{
+    return array_filter( $sizes, function( $val )
+    {
+        return 'medium_large' !== $val; // Filter out 'medium_large'
+    } );
+} );
 
+
+add_action('init', 'remove_extra_image_sizes');
 add_theme_support( 'post-thumbnails', array( 'post','product', 'gallery' ) );
 
 
