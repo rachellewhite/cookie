@@ -26,4 +26,7 @@ background-image: url(../images/ch_home-s1--bg.jpg);
 }
 
 
-/* FONTS */
+/* GALLERY */
+.gallery_pg_cat-title a {
+color: #4d3f3b;
+}

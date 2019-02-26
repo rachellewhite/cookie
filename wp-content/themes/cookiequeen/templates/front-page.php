@@ -52,7 +52,7 @@
 
                   <div data-src="<?= get_the_post_thumbnail_url(); ?>" class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack" data-fancybox="gallery" style="background-image: url('<?php the_post_thumbnail_url(array(500,500)); ?>'); background-size: cover; background-position: center;">
 
-              
+
                   </div>
                     <?php endif; ?>
 

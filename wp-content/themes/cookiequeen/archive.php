@@ -2,7 +2,10 @@
 
 		<!-- section -->
 
-			<h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+			<h1 class="page_s1-title-contain">Gallery</h1>
+
+<div class="gallery_section1--contain">
+
 
 <?php if (have_posts()): ?>
 <div class="gallery_pg_columns-row w-row">
@@ -34,5 +37,5 @@
 </div>
 <?php endif; ?>
 
-
+</div>
 <?php get_footer(); ?>
