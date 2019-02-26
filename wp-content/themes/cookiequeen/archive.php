@@ -6,9 +6,7 @@
 
 <div class="gallery_section1--contain">
 
-
 <?php if (have_posts()): ?>
-<div class="gallery_pg_columns-row w-row">
 
 <?php while (have_posts()) : the_post(); ?>
   <div class="col w-col w-col-3 w-col-medium-3 w-col-small-6 w-col-tiny-6">
@@ -30,12 +28,12 @@
 		<!-- /post title -->
 </div>
 
+
 <?php endwhile; ?>
+  <?php endif; ?>
+</div>
+
 
 			<?php get_template_part('pagination'); ?>
 
-</div>
-<?php endif; ?>
-
-</div>
 <?php get_footer(); ?>

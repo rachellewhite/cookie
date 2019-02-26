@@ -27,6 +27,17 @@ background-image: url(../images/ch_home-s1--bg.jpg);
 
 
 /* GALLERY */
+
+.gallery_pg_cat-title {
+    font-family: Niramit, sans-serif;
+    color: #4d3f3b;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-align: center;
+    text-transform: none;
+    padding-bottom: 1em;
+}
+
 .gallery_pg_cat-title a {
 color: #4d3f3b;
 }
