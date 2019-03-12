@@ -39,6 +39,7 @@
             <div class="product-thumb--contain">
               <?php the_post_thumbnail('thumbnail'); ?>
             </div>
+	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
           </a>
         </div>
           <?php endif; ?>

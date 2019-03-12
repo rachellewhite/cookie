@@ -18,7 +18,7 @@ background-image: url(../images/ch_home-s1--bg.jpg);
   max-width: 500px;
 }
   .news_content--text > p {
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fff;
   font-size: 1em;
   line-height: 1.6em;
@@ -29,7 +29,7 @@ background-image: url(../images/ch_home-s1--bg.jpg);
 /* GALLERY */
 
 .gallery_pg_cat-title {
-    font-family: Niramit, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #4d3f3b;
     font-size: 1.5em;
     line-height: 1.5em;
@@ -40,4 +40,12 @@ background-image: url(../images/ch_home-s1--bg.jpg);
 
 .gallery_pg_cat-title a {
 color: #4d3f3b;
+}
+
+.fancybox-bg {
+  opacity: .4!important;
+}
+
+.fancybox-image {
+    border: solid 20px #ffffff;
 }

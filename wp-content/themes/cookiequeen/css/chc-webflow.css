@@ -188,7 +188,7 @@ em {
 
 .home_s1-block--text {
   margin-top: 30px;
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
   line-height: 2rem;
   text-align: center;
@@ -521,7 +521,7 @@ em {
 
 .news_title--date {
   margin-top: 1px;
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fff;
   font-size: 1.1em;
   font-weight: 400;
@@ -534,7 +534,7 @@ em {
   margin-top: 20px;
   margin-right: 70px;
   margin-left: 70px;
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #fff;
   font-size: 1.3em;
   line-height: 1.6em;
@@ -838,7 +838,7 @@ em {
   max-width: 800px;
   margin-right: auto;
   margin-left: auto;
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #4d3f3b;
   font-size: 1.4em;
   line-height: 1.3em;
@@ -955,7 +955,7 @@ em {
 }
 
 .gallery_pg_cat-title {
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   color: #4d3f3b;
   font-size: 2em;
   line-height: 1.5em;
@@ -972,13 +972,13 @@ em {
   max-width: 600px;
   margin-right: auto;
   margin-left: auto;
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   text-align: center;
 }
 
 .back-to-gallery {
-  font-family: Niramit, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1504,3 +1504,5 @@ em {
   font-weight: 400;
   font-style: normal;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
