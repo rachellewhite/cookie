@@ -2,14 +2,11 @@
 <html <?php language_attributes(); ?> class="no-js" data-wf-page="5b3d158e82ecaec646022c4d" data-wf-site="5b3d158e82ecaeac2c022c4c">
 <head>
   <meta charset="utf-8">
-		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
+		<title><?php wp_title(''); ?></title>
  	<meta content="width=device-width, initial-scale=1" name="viewport">
 
 		<?php wp_head(); ?>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">WebFont.load({  google: {    families: ["Vollkorn:400,400italic,700,700italic","Niramit:regular,italic,500,600"]  }});</script>
-  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
 </head>
 
 <body <?php body_class("body"); ?>>
