@@ -888,29 +888,17 @@ em {
 }
 
 .gallery_section1--contain {
-  display: block;
-  max-width: 1200px;
-  min-height: 39em;
-  margin-top: 40px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 20px;
-  padding-left: 22px;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
+    display: flex;
+    max-width: 1200px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    flex-direction: row;
+    padding-left: 22px;
+    flex-wrap: wrap;
   justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: transparent;
-  line-height: 20px;
+align-items: center;  
 }
 
 .gallery_pg_columns-row {

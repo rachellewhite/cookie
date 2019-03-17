@@ -10,11 +10,13 @@
 
 		<!-- post thumbnail -->
 	<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+
       <div class="product-thumb--contain">
-			<?php the_post_thumbnail(array(300,300)); // Declare pixel size you need inside the array ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+					<?php the_post_thumbnail(array(300,300)); // Declare pixel size you need inside the array ?>
+				</a>
 			</div>
-		</a>
+
 	<?php endif; ?>
 		<!-- /post thumbnail -->
 		<!-- post title -->
@@ -26,5 +28,6 @@
 		<?php endwhile; ?>
   <?php endif; ?>
 	</div>
-	<?php get_template_part('pagination'); ?>
+
+
 <?php get_footer(); ?>
