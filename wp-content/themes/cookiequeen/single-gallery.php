@@ -7,7 +7,7 @@
 <?php get_header(); ?>
   <div class="global-breadcrumb"><a href="<?php home_url(); ?>/gallery" class="back-to-gallery"><span class="text-span">&lt; </span>back to gallery</a></div>
 
-<h1 class="page_s1-title-contain"><?php the_title(); ?></h1>
+<h1 class="page_s1-title-contain single"><?php the_title(); ?></h1>
 
 <p class="gallery-summary-text"><?php the_field('gallery_text'); ?></p>
 
@@ -41,7 +41,7 @@
               <?php the_post_thumbnail('thumbnail'); ?>
   </a>
             </div>
-	         <div class="gallery_pg_cat-title">
+	         <div class="gallery_pg_cat-title single">
             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
             </div>
 

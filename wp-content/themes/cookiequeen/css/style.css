@@ -6,6 +6,12 @@ body {
 .fancybox-active {
     height: 100%;
 }
+
+
+.page_s1-title-contain {
+  margin: 50px auto;
+}
+
 /* HOMEPAGE */
 
 
@@ -16,7 +22,9 @@ body.home {
 background-image: url(../images/ch_home-s1--bg.jpg);
 }
 
-  /* featured products */
+
+/* featured products */
+
 .home_section-2--columns.w-row .gallery_column--contain  {
   cursor: pointer;
   height: 300px;
@@ -39,18 +47,23 @@ background-image: url(../images/ch_home-s1--bg.jpg);
 
 /* GALLERY */
 
+
+.gallery_pg_columns-row {
+  width: 100%;
+}
+
 .gallery_pg_cat-title {
     font-family: 'Open Sans', sans-serif;
     color: #4d3f3b;
     font-size: 1.5em;
-    line-height: 1.5em;
+    line-height: 1.15em;
     text-align: center;
     text-transform: none;
-    padding-bottom: 1em;
+    padding: .45em 0 1em;
 }
 
 .gallery_pg_cat-title a {
-color: #4d3f3b;
+  color: #4d3f3b;
 }
 
 .fancybox-bg {
@@ -59,4 +72,24 @@ color: #4d3f3b;
 
 .fancybox-image {
     border: solid 20px #ffffff;
+}
+
+.product-thumb--contain {
+  border: solid 15px #f6f6f6;
+}
+
+
+/* INDIVIDUAL GALLERIES */
+.page_s1-title-contain.single {
+  margin: 0 auto 20px auto;
+}
+
+.gallery_pg_cat-title.single {
+    font-family: 'Open Sans', sans-serif;
+    color: #4d3f3b;
+    font-size: 1.15em;
+    line-height: 1.15em;
+    text-align: center;
+    text-transform: none;
+    padding: .8em;
 }

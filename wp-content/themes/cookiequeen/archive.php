@@ -3,6 +3,8 @@
 
 <h1 class="page_s1-title-contain">Gallery</h1>
 
+<p class="gallery-summary-text"><?php the_field('gallery_description',  get_option('page_for_posts')); ?></p>
+
 	<div class="gallery_section1--contain">
 		<?php if (have_posts()): ?>
 			<?php while (have_posts()) : the_post(); ?>
