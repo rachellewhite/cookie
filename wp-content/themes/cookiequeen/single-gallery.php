@@ -35,12 +35,16 @@
         <?php if ( has_post_thumbnail() ): ?>
 
         <div class="col w-col w-col-4 w-col-medium-4 w-col-small-6 w-col-tiny-6">
-          <a href="<?= get_the_post_thumbnail_url(); ?>" data-fancybox="gallery">
             <div class="product-thumb--contain">
+    <a href="<?= get_the_post_thumbnail_url(); ?>" data-fancybox="gallery">
+
               <?php the_post_thumbnail('thumbnail'); ?>
+  </a>
             </div>
-	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-          </a>
+	         <div class="gallery_pg_cat-title">
+            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+            </div>
+
         </div>
           <?php endif; ?>
 

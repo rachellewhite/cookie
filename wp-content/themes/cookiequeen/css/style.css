@@ -3,6 +3,9 @@ body {
   height: 100%;
 }
 
+.fancybox-active {
+    height: 100%;
+}
 /* HOMEPAGE */
 
 
@@ -17,6 +20,9 @@ background-image: url(../images/ch_home-s1--bg.jpg);
 .home_section-2--columns.w-row .gallery_column--contain  {
   cursor: pointer;
   height: 300px;
+}
+.fancybox-active {
+    height: 100%;
 }
 /* news section */
   .news_title-1 {
