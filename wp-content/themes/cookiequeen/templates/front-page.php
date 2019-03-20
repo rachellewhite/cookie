@@ -13,7 +13,7 @@
             <div class="column-4 w-col w-col-2 w-col-small-small-stack w-col-stack"></div>
             <div class="column-3 w-col w-col-8 w-col-small-small-stack w-col-stack"><img src="<?= get_template_directory_uri(); ?>/images/ch_logo-full.png" alt="" class="home_img--logo">
               <div class="home_s1-block--text">Welcome to Corner Hutch Cookies, <br>where custom-designed, hand-decorated cookies <br>are made from scratch and baked fresh to order.</div>
-              <div class="home_s1-block--button">Browse Designs <span class="home_s1-block-button--arrow">&gt;</span></div>
+              <a href="<?php home_url(); ?>/gallery" class="home_s1-block--button">Browse Designs <span class="home_s1-block-button--arrow">&gt;</span></a>
             </div>
             <div class="column-5 w-col w-col-2 w-col-small-small-stack w-col-stack"></div>
           </div>
@@ -24,7 +24,7 @@
           <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
             <div class="home_gallery--block1">
               <h1 class="gallery_block-1--title">Designs fresh from the bakery</h1><img src="<?= get_template_directory_uri(); ?>/images/ch_home-gal-block--ornament.png" width="123.5" alt="">
-              <h2 class="gallery_block-1--subtitle"><a href="#" class="gallery_block1-title--link">view all &gt;</a></h2>
+              <h2 class="gallery_block-1--subtitle"><a href="<?php home_url(); ?>/gallery" class="gallery_block1-title--link">view all &gt;</a></h2>
             </div>
           </div>
 

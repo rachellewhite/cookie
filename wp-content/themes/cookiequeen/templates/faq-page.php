@@ -13,10 +13,12 @@
     <?php if ( have_rows( 'faq' ) ) : ?>
     <?php
         while ( have_rows( 'faq' ) ) : the_row(); ?>
+          <div class="faq-block">
           <h3>
             <?php the_sub_field( 'question' ); ?>
           </h3>
           <p><?php the_sub_field( 'answer' ); ?></p>
+          </div>
           <?php endwhile; endif; ?>
 
 				</div>

@@ -13,7 +13,6 @@
         <?php if ( have_rows( 'featured' ) ) : ?>
         <?php while ( have_rows( 'featured' ) ) : the_row(); ?>
 
-          <p><?php the_sub_field( 'answer' ); ?></p>
           <?php endwhile; endif; ?>
 
 				</div>

@@ -7,6 +7,10 @@
 
 		<?php wp_head(); ?>
 
+<link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:300,400,700" rel="stylesheet">
+
+
+
 </head>
 
 <body <?php body_class("body"); ?>>
