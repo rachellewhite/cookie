@@ -8,16 +8,15 @@
 <?php get_header(); ?>
 
       <div class="home_section-1--contain">
-        <div class="home_s1--block">
-          <div class="columns w-row">
-            <div class="column-4 w-col w-col-2 w-col-small-small-stack w-col-stack"></div>
-            <div class="column-3 w-col w-col-8 w-col-small-small-stack w-col-stack"><img src="<?= get_template_directory_uri(); ?>/images/ch_logo-full.png" alt="" class="home_img--logo">
+          <div class="home_s1--block">
+            <div class="home-header-content"><img src="<?= get_template_directory_uri(); ?>/images/ch_logo-full.png" alt="" class="home_img--logo">
               <div class="home_s1-block--text">Welcome to Corner Hutch Cookies, <br>where custom-designed, hand-decorated cookies <br>are made from scratch and baked fresh to order.</div>
-              <a href="<?php home_url(); ?>/gallery" class="home_s1-block--button">Browse Designs <span class="home_s1-block-button--arrow">&gt;</span></a>
+              <div class="home_s1-block--button">Browse Designs <span class="home_s1-block-button--arrow">&gt;</span></div>
+              <div class="home-header-img"><img src="<?= get_template_directory_uri(); ?>/images/ch_home-giraffe.png" data-w-id="07c53d67-4a2d-9399-7477-c80d3adc99fd" style="-webkit-transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0);-moz-transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0);-ms-transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0);transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0)" alt="" class="header-img-01">
+              <img src="<?= get_template_directory_uri(); ?>/images/ch_home-ladyflower.png" data-w-id="07c53d67-4a2d-9399-7477-c80d3adc99fd" style="-webkit-transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0);-moz-transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0);-ms-transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0);transform:translate3d(-800PX, -500PX, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(-29DEG) skew(0, 0)" alt="" class="header-img-01">
+              </div>
             </div>
-            <div class="column-5 w-col w-col-2 w-col-small-small-stack w-col-stack"></div>
           </div>
-        </div>
       </div>
       <div class="home_section-2--contain">
         <div class="home_section-2--columns w-row">

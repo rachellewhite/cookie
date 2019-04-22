@@ -7,20 +7,17 @@
 
 		<?php wp_head(); ?>
 
-<link href="https://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:300,400,700" rel="stylesheet">
-
-
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:300,400,700" rel="stylesheet">
 
 </head>
 
 <body <?php body_class("body"); ?>>
-
-<?php if ( is_front_page() ) {
-  include(locate_template('partials/home-nav.php'));
-}
-else {
-    include(locate_template('partials/page-nav.php'));
-} ?>
-
   <div class="global_site--contain">
         <div class="global--content--contain">
+
+<?php if ( is_front_page() ): ?>
+<?php  include(locate_template('partials/home-nav.php')); ?>
+
+<?php else: ?>
+    <?php include(locate_template('partials/page-nav.php')); ?>
+<?php endif; ?>
