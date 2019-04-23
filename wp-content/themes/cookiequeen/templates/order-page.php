@@ -23,7 +23,9 @@
               </ul>
             </div>
             <div class="order-column-02 w-col w-col-9">
-              <div class="form-announce">I am currently booked for the month of <strong>May</strong> and am taking orders for <strong>June</strong> and beyond. (August is about half full already). Please check back soon for new End of School, Graduation and Father’s Day and Summer designs OR to request a custom order.  </div>
+              <div class="form-announce"><?php the_field('order_announce'); ?>
+                <!-- I am currently booked for the month of <strong>May</strong> and am taking orders for <strong>June</strong> and beyond. (August is about half full already). Please check back soon for new End of School, Graduation and Father’s Day and Summer designs OR to request a custom order.   -->
+              </div>
 
 
 
