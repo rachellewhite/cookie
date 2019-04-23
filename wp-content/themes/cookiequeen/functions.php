@@ -30,6 +30,8 @@ function cookiequeen_styles()
 
     wp_register_style('fancybox', get_template_directory_uri() . '/css/jquery.fancybox.min.css', array(), '1.0', 'all');
 
+    wp_register_style('wf-export', get_template_directory_uri() . '/css/corner-hutch-cookies.webflow.css', array(), '1.0', 'all');
+
     wp_register_style('custom-styles', get_template_directory_uri() . '/css/style.css', array(), '1.0', 'all');
 
     wp_register_style('form-styles', get_template_directory_uri() . '/css/form.css', array(), '1.0', 'all');
@@ -37,6 +39,7 @@ function cookiequeen_styles()
     wp_enqueue_style('normalize'); // Enqueue it!
     wp_enqueue_style('webflow'); // Enqueue it!
     wp_enqueue_style('fancybox'); // Enqueue it!
+    wp_enqueue_style('wf-export'); // Enqueue it!
     wp_enqueue_style('custom-styles'); // Enqueue it!
     wp_enqueue_style('form-styles'); // Enqueue it!
 
