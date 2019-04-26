@@ -115,6 +115,8 @@
      float: none;
      clear: none;
 }
+
+
  .home_section-1--contain {
      display: block;
      -webkit-box-orient: vertical;
@@ -622,6 +624,7 @@
      background-size: cover;
 }
  .global--content--contain {
+margin-top: 95px;
      padding-bottom: 170px;
 }
  .home-s1-img1 {
@@ -1428,4 +1431,3 @@
      background-color: #f5f5f5;
      padding: 20px;
 }
- 

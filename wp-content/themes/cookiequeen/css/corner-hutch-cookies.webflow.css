@@ -1063,10 +1063,12 @@ em {
 
 .order-top-text {
   width: auto;
+  max-width: 800px;
   margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  padding: 20px 220px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: transparent;
   font-family: 'Roboto Slab', sans-serif;
   color: #fff;
@@ -1095,7 +1097,21 @@ em {
 }
 
 .order-columns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .order-column-01 {
@@ -1532,6 +1548,9 @@ em {
   .news_content--text {
     text-align: center;
   }
+  .global--content--contain {
+    margin-top: 60px;
+  }
   .home-s3-taste-quote--img {
     max-width: 38%;
     padding-bottom: 20px;
@@ -1618,6 +1637,14 @@ em {
   .gallery_pg_cat-title {
     font-size: 1.2em;
   }
+  .order-top-text {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+  .form-announce {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1703,6 +1730,35 @@ em {
   .global-breadcrumb {
     margin-left: auto;
   }
+  .order-columns {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+  .order-column-01 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
 }
 
 @media (max-width: 479px) {
@@ -1774,6 +1830,19 @@ em {
   }
   .gallery_pg_cat-title {
     font-size: 0.9em;
+  }
+  .order-top-text {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .order-column-02 {
+    padding-top: 10px;
+  }
+  .form-announce {
+    margin-right: 10px;
+    margin-left: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
 
