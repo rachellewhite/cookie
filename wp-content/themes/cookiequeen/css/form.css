@@ -1,7 +1,41 @@
-.form-full {
-  width: 100%;
+.nf-field-element input, .nf-field-element select, .nf-field-element textarea {
+    margin: 0;
+    width: auto;
+    padding: 7px 10px;
+    height: auto;
+    border-radius: 5px;
+    vertical-align: inherit;
+}
+.nf-field-label label {
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+}
+select.nf-element {
+    height: 38px;
 }
 
-.form-half {
-  width: 45%;
-}
+input[type=button].nf-element {
+    width: 200px!important;
+    height: 55px;
+    margin: 0 auto;
+  color: #ffffff;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      border-radius: 5px;
+      background-color: #ef5268;
+      -webkit-transition: all 200ms ease;
+      transition: all 200ms ease;
+      font-size: 26px;
+      line-height: 32px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    input[type=button].nf-element:hover {
+      padding-top: 0px;
+      border: 3px solid #fff;
+      background-color: #fff;
+      color: #ef5268;
+    }
