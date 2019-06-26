@@ -73,7 +73,8 @@ add_action('init', 'cookiequeen_scripts'); // Add Custom Scripts to wp_head
 // Register main menu
 
 function chc_custom_new_menu() {
-  register_nav_menu('nav-menu',__( 'Nav Menu' ));
+  register_nav_menu('nav-menu-left',__( 'Nav Menu Left' ));
+  register_nav_menu('nav-menu-right',__( 'Nav Menu Right' ));
   // register_nav_menu('modal-menu',__( 'Modal Menu' ));
 }
 add_action( 'init', 'chc_custom_new_menu' );

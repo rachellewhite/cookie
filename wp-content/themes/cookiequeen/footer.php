@@ -5,7 +5,7 @@
 		<!-- /global_site--contain-->
 
   <div class="global-footer-contain"></div>
-
+</div>
 		<?php wp_footer(); ?>
 
 		<!-- analytics -->
