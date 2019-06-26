@@ -6,9 +6,9 @@
  ?>
 
 <?php get_header(); ?>
-      <div class="order-contain">
+      <div class="page-contain order">
         <div class="order-header-holder">
-          <h1>Request A Quote</h1>
+          <h1 class="page-heading"><?php the_title(); ?></h1>
             <div class="form-announce"><?php the_field('order_announce'); ?>
         </div>
         </div>
