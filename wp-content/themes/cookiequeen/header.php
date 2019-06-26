@@ -7,7 +7,8 @@
 
 		<?php wp_head(); ?>
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300|Roboto:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&display=swap" rel="stylesheet">
+
 
 </head>
 

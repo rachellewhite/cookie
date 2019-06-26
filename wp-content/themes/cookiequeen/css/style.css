@@ -43,18 +43,7 @@
      -webkit-transition: opacity 200ms linear;
      transition: opacity 200ms linear;
 }
- .body.home {
-     background-color: transparent;
-     font-size: 14px;
-}
- .body.home.page {
-     overflow: visible;
-     background-color: transparent;
-     background-image: url(../images/ch_home-s1--bg.jpg);
-     background-position: 50% 80%;
-     background-size: cover;
-     background-repeat: no-repeat;
-}
+
  .body.page {
      background-image: none;
 }
