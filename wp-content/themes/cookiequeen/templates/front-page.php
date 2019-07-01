@@ -36,7 +36,7 @@
 
               <?php foreach( $featured_products as $post): ?>
                 <?php setup_postdata($post); ?>
-
+  <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
                   <?php
                     $item_row_counter++;
                     if( $item_row_counter == 1 || $item_row_counter % 3 == 1 ) {
@@ -45,7 +45,7 @@
                   ?>
                   <?php if ( has_post_thumbnail() ): ?>
 
-                  <div data-src="<?= get_the_post_thumbnail_url(); ?>" class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack" data-fancybox="gallery" style="background-image: url('<?php the_post_thumbnail_url(array(500,500)); ?>'); background-size: cover; background-position: center;">
+                  <div data-src="<?= get_the_post_thumbnail_url(); ?>" class="gallery_block-img--contain" data-fancybox="gallery" style="background-image: url('<?php the_post_thumbnail_url(array(500,500)); ?>'); background-size: cover; background-position: center;">
 
 
                   </div>
@@ -55,6 +55,7 @@
                   }
                     $counter++;
                   ?>
+                  </div>
 
                 <?php endforeach; ?>
               <?php wp_reset_postdata(); ?>
