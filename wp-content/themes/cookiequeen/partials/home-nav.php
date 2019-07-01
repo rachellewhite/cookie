@@ -30,7 +30,7 @@
         echo str_replace( $find, $replace, $navmenu );
        ?>
       </nav>
-<div class="social desk"><a href="#" class="social-link w-inline-block"><img src="<?= get_template_directory_uri(); ?>/images/insta.png" alt="" class="social-image"></a><a href="#" class="social-link w-inline-block"><img src="<?= get_template_directory_uri(); ?>/images/facebook.png" alt="" class="social-image"></a></div>
+<div class="social desk"><a href="https://www.instagram.com/cornerhutchcookies/" target="_blank" class="social-link w-inline-block"><img src="<?= get_template_directory_uri(); ?>/images/insta.png" alt="" class="social-image"></a><a href="https://www.facebook.com/cornerhutchcookies" target="_blank" class="social-link w-inline-block"><img src="<?= get_template_directory_uri(); ?>/images/facebook.png" alt="" class="social-image"></a></div>
       <div class="navbar-mobile-menu w-nav-button">
         <div class="navbar-mobile--text">menu</div>
       </div>

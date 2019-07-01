@@ -30,35 +30,50 @@ $('[data-fancybox="gallery"]').fancybox({
     "</div>",
 		});
 
-		document.addEventListener("DOMContentLoaded", function() {
-		  var lazyloadImages = document.querySelectorAll("img.lazy");
-		  var lazyloadThrottleTimeout;
+		// document.addEventListener("DOMContentLoaded", function() {
+		//   var lazyloadImages = document.querySelectorAll("img.lazy");
+		//   var lazyloadThrottleTimeout;
+		//
+		//   function lazyload () {
+		//     if(lazyloadThrottleTimeout) {
+		//       clearTimeout(lazyloadThrottleTimeout);
+		//     }
+		//
+		//     lazyloadThrottleTimeout = setTimeout(function() {
+		//         var scrollTop = window.pageYOffset;
+		//         lazyloadImages.forEach(function(img) {
+		//             if(img.offsetTop < (window.innerHeight + scrollTop)) {
+		//               img.src = img.dataset.src;
+		//               img.classList.remove('lazy');
+		//             }
+		//         });
+		//         if(lazyloadImages.length == 0) {
+		//           document.removeEventListener("scroll", lazyload);
+		//           window.removeEventListener("resize", lazyload);
+		//           window.removeEventListener("orientationChange", lazyload);
+		//         }
+		//     }, 20);
+		//   }
+		//
+		//   document.addEventListener("scroll", lazyload);
+		//   window.addEventListener("resize", lazyload);
+		//   window.addEventListener("orientationChange", lazyload);
+		// });
 
-		  function lazyload () {
-		    if(lazyloadThrottleTimeout) {
-		      clearTimeout(lazyloadThrottleTimeout);
-		    }
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-		    lazyloadThrottleTimeout = setTimeout(function() {
-		        var scrollTop = window.pageYOffset;
-		        lazyloadImages.forEach(function(img) {
-		            if(img.offsetTop < (window.innerHeight + scrollTop)) {
-		              img.src = img.dataset.src;
-		              img.classList.remove('lazy');
-		            }
-		        });
-		        if(lazyloadImages.length == 0) {
-		          document.removeEventListener("scroll", lazyload);
-		          window.removeEventListener("resize", lazyload);
-		          window.removeEventListener("orientationChange", lazyload);
-		        }
-		    }, 20);
-		  }
-
-		  document.addEventListener("scroll", lazyload);
-		  window.addEventListener("resize", lazyload);
-		  window.addEventListener("orientationChange", lazyload);
-		});
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  });
+}
 
 	});
 
