@@ -5,11 +5,13 @@
 */
  ?>
 <?php get_header(); ?>
+
+  <div class="page-contain gallery">
   <div class="global-breadcrumb"><a href="<?php home_url(); ?>/gallery" class="back-to-gallery"><span class="text-span">&lt; </span>back to gallery</a></div>
 
-<h1 class="page_s1-title-contain single"><?php the_title(); ?></h1>
+  <h1 class="page-heading"><?php the_title(); ?></h1>
 
-<p class="gallery-summary-text"><?php the_field('gallery_text'); ?></p>
+<div class="gallery-summary-text"><?php the_field('gallery_text'); ?></div>
 
 <div class="gallery_section1--contain">
   <?php
@@ -59,5 +61,5 @@
   <?php endif; ?>
 
 </div>
-
+</div>
 <?php get_footer(); ?>

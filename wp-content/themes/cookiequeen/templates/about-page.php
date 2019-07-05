@@ -6,7 +6,7 @@
  ?>
 
 <?php get_header(); ?>
-          <div class="page-contain order">
+          <div class="page-contain">
             <div class="about-contain">
               <div class="order-header-holder">
                 <h1 class="page-heading"><?php the_title(); ?></h1>
@@ -20,12 +20,15 @@
 ?>
 
   <div class="about-row">
+<?php if (get_sub_field('about_image')): ?>
         <img src="<?php echo $image['url']; ?>" class="about-img">
+<?php endif; ?>
     <div class="about-text">
       <?php echo $text; ?>
     </div>
   </div>
 
+<img src="<?= get_template_directory_uri(); ?>/images/divider.png">
   <?php endwhile; endif; ?>
 
 

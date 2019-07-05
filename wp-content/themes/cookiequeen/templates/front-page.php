@@ -19,7 +19,7 @@
         <div class="home_section-2--columns w-row">
         <div class="gallery_column--contain w-col w-col-3 w-col-medium-6 w-col-small-small-stack w-col-tiny-tiny-stack">
           <div class="home_gallery--block1">
-            <h1 class="gallery_block-1--title">Designs fresh from the bakery</h1><img src="<?= get_template_directory_uri(); ?>/images/ch_home-gal-block--ornament.png" alt="" class="designs-divider"><a href="#" class="view-button w-button">View All</a>
+            <h1 class="gallery_block-1--title">Designs fresh from the bakery</h1><img src="<?= get_template_directory_uri(); ?>/images/ch_home-gal-block--ornament.png" alt="" class="designs-divider"><a href="<?php home_url(); ?>/gallery" class="view-button w-button">View All</a>
 </div>
         </div>
 

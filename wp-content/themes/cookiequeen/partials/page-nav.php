@@ -1,4 +1,4 @@
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="main-navbar w-nav">
+  <div data-collapse="medium" data-animation="default" data-duration="400" class="page-navbar w-nav">
     <div class="page--navbar-contain w-container">
       <nav role="navigation" class="page-navlink--contain w-nav-menu">
 
@@ -32,8 +32,9 @@
     echo str_replace( $find, $replace, $navmenu );
    ?>
 </nav>
+
+    </div>
       <div class="navbar-mobile-menu w-nav-button">
         <div class="navbar-mobile--text">menu</div>
       </div>
-    </div>
   </div>

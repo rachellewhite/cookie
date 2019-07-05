@@ -6,7 +6,7 @@
  ?>
 <?php get_header(); ?>
 
-  <div class="page-contain order">
+  <div class="page-contain ">
     <div class="about-contain">
       <div class="order-header-holder">
         <h1 class="page-heading"><?php the_title(); ?></h1>

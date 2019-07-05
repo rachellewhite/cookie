@@ -5,6 +5,7 @@
 */
  ?>
 <?php get_header(); ?>
+      <div class="page-contain">
 
 
       <div class="page_section1--contain">
@@ -17,6 +18,6 @@
 
 				</div>
 			</div>
-
+</div>
 
 <?php get_footer(); ?>
