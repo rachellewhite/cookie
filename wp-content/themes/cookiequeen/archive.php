@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="page-contain">
+  <div class="page-contain gallery">
   <h1 class="page-heading">Gallery</h1>
 
 <div class="gallery-summary-text"><?php the_field('gallery_description',  get_option('page_for_posts')); ?></div>

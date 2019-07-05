@@ -6,6 +6,9 @@
      font-style: normal;
 }
 
+body {
+  height: 100%;
+}
 
 /* NAV */
 .main-navlink-contain {
@@ -109,52 +112,70 @@ border-bottom-color: transparent;
      padding: .45em 0 1em;
 }
 /* FAQ */
- /* .faq-block {
-     font-size: 16px;
-     line-height: 24px;
-     font-weight: 400;
-     font-family: 'Roboto Slab';
-}
- .faq-block h3 {
-     font-family: 'Roboto Slab', sans-serif;
-     font-size: 24px;
-     font-weight: 400;
-     letter-spacing: normal;
-     text-transform: none;
-}
- .faq-block p {
-     background-color: #f5f5f5;
-     padding: 20px;
-} */
+
 .accordion {
   background-color: #ffffff;
   cursor: pointer;
   padding: 20px;
   width: 100%;
   text-align: left;
-  border: none;
+  border-bottom: solid 3px #ef525a;
   outline: none;
   transition: 0.4s;
+  margin: 10px 0 0 0;
 }
 
 .accordion p {
-margin-bottom: 0;
-}
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: #ccc;
+  margin-bottom: 0;
 }
 
-/* Style the accordion panel. Note: hidden by default */
+.active, .accordion:hover {
+  background-color: #ef525a;
+  color: #ffffff;
+  border-bottom: solid 3px #ef525a;
+}
+.accordion:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-left: 5px;
+  background: url('../images/chevron-down.png') center no-repeat;
+  background-size: contain;
+}
+
+.active:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-left: 5px;
+  background: url('../images/chevron-up.png') center no-repeat;
+  background-size: contain;
+
+}
+
 .panel {
-  padding: 0 18px;
   background-color: white;
- max-height: 0;
+  max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-
 }
 
+.panel p {
+margin: 20px;
+}
+
+.panel p a {
+    color: #ef525a;
+  border-bottom-color: #ef525a;
+}
+
+.panel p a:hover {
+border-bottom-color: transparent;
+}
 /* ORDER FORM */
 .form-announce {
 line-height: 1.5em;

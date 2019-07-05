@@ -26,8 +26,8 @@ $('[data-fancybox="gallery"]').fancybox({
     '<div class="fancybox-navigation">{{arrows}}</div>' +
     '<div class="fancybox-stage"></div>' +
     '<div class="fancybox-caption"></div>' +
-    "</div>" +
-    "</div>",
+    '</div>' +
+    '</div>'
 		});
 
 		// document.addEventListener("DOMContentLoaded", function() {
