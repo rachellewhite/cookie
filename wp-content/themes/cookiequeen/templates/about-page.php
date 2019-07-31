@@ -28,7 +28,6 @@
     </div>
   </div>
 
-<img src="<?= get_template_directory_uri(); ?>/images/divider.png">
   <?php endwhile; endif; ?>
 
 

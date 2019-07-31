@@ -7,10 +7,11 @@
 <?php get_header(); ?>
 
   <div class="page-contain">
-    <div class="about-contain">
       <div class="order-header-holder">
         <h1 class="page-heading"><?php the_title(); ?></h1>
       </div>
+    <div class="accordion-contain">
+
     <?php if ( have_rows( 'faq' ) ) : ?>
     <?php
         while ( have_rows( 'faq' ) ) : the_row(); ?>

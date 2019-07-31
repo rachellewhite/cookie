@@ -65,15 +65,6 @@ height: auto;
 
 /* ABOUT */
 
-.about-text p a {
-    color: #ef525a;
-  border-bottom-color: #ef525a;
-}
-
-.about-text p a:hover {
-border-bottom-color: transparent;
-}
-
  .fancybox-bg {
      opacity: .4 !important;
 }
@@ -81,6 +72,9 @@ border-bottom-color: transparent;
      border: solid 20px #ffffff;
 }
 
+.about-text p {
+  margin-bottom: 0;
+}
 
 /* GALLERY/GALLERIES */
 
@@ -112,6 +106,10 @@ border-bottom-color: transparent;
      padding: .45em 0 1em;
 }
 /* FAQ */
+.accordion-contain {
+  max-width: 700px;
+  margin: 40px auto 0 auto;
+}
 
 .accordion {
   background-color: #ffffff;
@@ -165,7 +163,12 @@ border-bottom-color: transparent;
 }
 
 .panel p {
+font-weight: 300;
 margin: 20px;
+}
+.panel p b {
+font-weight: 400;
+
 }
 
 .panel p a {

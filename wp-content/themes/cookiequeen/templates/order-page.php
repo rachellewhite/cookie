@@ -39,7 +39,7 @@
 
               <div class="order-column-02 w-col w-col-8 w-col-stack">
 
-                <div class="order-top-text">Please begin by reading the <a href="#">FAQ</a> and <a href="#">Pricing</a> pages and then fill out the<a href="#"> form below </a>to request more information and a quote for your custom cookie order.</div>
+                <div class="order-top-text">Please begin by reading the <a href="#">FAQ</a> and <a href="#">Pricing</a> pages and then fill out the form below to request more information and a quote for your custom cookie order.</div>
 
               <?php echo do_shortcode("[ninja_form id=4]"); ?>
 
