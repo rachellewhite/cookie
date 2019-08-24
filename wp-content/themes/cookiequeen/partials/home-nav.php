@@ -1,5 +1,4 @@
   <div data-collapse="medium" data-animation="default" data-duration="400" class="main-navbar w-nav">
-    <div class="header-bsr"></div>
 
     <div class="main-navbar--contain w-container">
       <nav role="navigation" class="main-navlink-contain w-nav-menu">

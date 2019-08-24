@@ -1,0 +1,43 @@
+{
+    "key": "group_5c8ee5cfe88bc",
+    "title": "Main Gallery",
+    "fields": [
+        {
+            "key": "field_5c8ee5d594a61",
+            "label": "Main Gallery Description",
+            "name": "gallery_description",
+            "type": "textarea",
+            "instructions": "The description at the top of the main gallery page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "5740"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1562188981
+}

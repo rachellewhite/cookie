@@ -15,9 +15,9 @@
     $replace = array('<a class="page-navlink--block w-nav-link"', ' ', '');
     echo str_replace( $find, $replace, $navmenu );
    ?>
-<a href="<?php home_url(); ?>" class="page-logo-link">
+<!-- <a href="<?php home_url(); ?>" class="page-logo-link">
   <img src="<?= get_template_directory_uri(); ?>/images/logo_page.png" alt="Corner Hutch Cookies, LLC" class="page-logo">
-</a>
+</a> -->
   <?php
     $args = array (
       'theme_location' => 'nav-menu-right',

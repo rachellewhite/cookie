@@ -63,6 +63,11 @@ height: auto;
      height: 100%;
 }
 
+/* GENERAL PAGE TEMPLATE */
+.pricing-contain strong {
+font-weight: 400;
+}
+
 /* ABOUT */
 
  .fancybox-bg {
@@ -163,37 +168,16 @@ height: auto;
 }
 
 .panel p {
-font-weight: 300;
 margin: 20px;
 }
-.panel p b {
-font-weight: 400;
 
-}
 
-.panel p a {
-    color: #ef525a;
-  border-bottom-color: #ef525a;
-}
-
-.panel p a:hover {
-border-bottom-color: transparent;
-}
 /* ORDER FORM */
-.form-announce {
-line-height: 1.5em;
-}
-.order-top-text a {
-    color: #ef525a;
-  border-bottom-color: #ef525a;
-}
-.order-top-text a:hover {
-    color: #ef525a;
-  border-bottom-color: transparent;
-}
+
 
 .nf-form-fields-required {
 text-align: center;
+font-size: .85rem;
 }
 
 #ninja_forms_required_items, .nf-field-container {
@@ -233,20 +217,23 @@ select.nf-element {
 }
 
 input[type=button].nf-element {
-    width: 200px!important;
-    height: 55px;
-    margin: 0 auto;
-color: #ffffff;
-  background-color: #ef525a;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      border-radius: 5px;
-      -webkit-transition: all 200ms ease;
-      transition: all 200ms ease;
-      font-size: 26px;
-      line-height: 32px;
+
+      padding: 20px 30px 23px;
+      border-style: none;
+      border-width: 3px;
+      border-color: #ebebeb;
+      border-radius: 3px;
+      background-color: #ef525a;
+      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.55);
+      font-family: 'Roboto Slab', sans-serif;
+      color: #fff;
+      font-size: 1.9em;
+      line-height: 1.1em;
       font-weight: 300;
-      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 0.025em;
+      text-transform: none;
+  
     }
 
 input[type=button].nf-element:hover {
