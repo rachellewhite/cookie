@@ -1,9 +1,9 @@
 /* FONTS */
- @font-face {
-     font-family: 'Simply Sweet Serif';
-     src: url('../fonts/37D94F_1_0.woff2') format('woff2'), url('../fonts/37D94F_1_0.eot') format('embedded-opentype'), url('../fonts/37D94F_1_0.woff') format('woff'), url('../fonts/37D94F_1_0.ttf') format('truetype');
-     font-weight: 400;
-     font-style: normal;
+@font-face {
+  font-family: 'Simply Sweet Serif';
+  src: url('../fonts/37D94F_1_0.woff2') format('woff2'), url('../fonts/37D94F_1_0.eot') format('embedded-opentype'), url('../fonts/37D94F_1_0.woff') format('woff'), url('../fonts/37D94F_1_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -17,64 +17,67 @@ body {
 }
 
 @media (max-width: 991px) {
-.main-navlink-block {
-  max-width: 991px!important;
+  .main-navlink-block {
+    max-width: 991px !important;
   }
 }
 
 /* HOMEPAGE */
-  /* header */
+/* header */
 .header-imgs {
-    z-index: -10000;
+  z-index: -10000;
 }
 
- .unordered-list {
-     margin-top: 5px;
-     margin-bottom: 5px;
-     padding-left: 24px;
-}
- .heading {
-     margin-top: 10px;
-     font-size: 2.4em;
-     line-height: 0.9em;
-}
- .heading-2 {
-     margin-top: 10px;
-     font-size: 1.2em;
-     line-height: 0.9em;
-}
- .heading-3 {
-     margin-bottom: 10px;
-     font-size: 1.8em;
-     line-height: 0.9em;
+.unordered-list {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 24px;
 }
 
+.heading {
+  margin-top: 10px;
+  font-size: 2.4em;
+  line-height: 0.9em;
+}
+
+.heading-2 {
+  margin-top: 10px;
+  font-size: 1.2em;
+  line-height: 0.9em;
+}
+
+.heading-3 {
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  line-height: 0.9em;
+}
 
 /* featured products */
- .home_section-2--columns.w-row .gallery_column--contain {
-     cursor: pointer;
-     height: 300px;
-}
-.home_section-2--columns.w-row .gallery_column--contain:first-of-type {
-height: auto;
+.home_section-2--columns.w-row .gallery_column--contain {
+  cursor: pointer;
+  height: 300px;
 }
 
- .fancybox-active {
-     height: 100%;
+.home_section-2--columns.w-row .gallery_column--contain:first-of-type {
+  height: auto;
+}
+
+.fancybox-active {
+  height: 100%;
 }
 
 /* GENERAL PAGE TEMPLATE */
 .pricing-contain strong {
-font-weight: 400;
+  font-weight: 400;
 }
 
 /* ABOUT */
-
- .fancybox-bg {
-     opacity: .4 !important;
+.fancybox-bg {
+  opacity: .4 !important;
 }
- .fancybox-image {
-     border: solid 20px #ffffff;
+
+.fancybox-image {
+  border: solid 20px #ffffff;
 }
 
 .about-text p {
@@ -82,9 +85,12 @@ font-weight: 400;
 }
 
 /* GALLERY/GALLERIES */
+.fancybox-navigation .fancybox-button:hover {
+  border: none;
+}
 
 .size-300x300.wp-post-image {
-    border: 15px solid #fff;
+  border: 15px solid #fff;
 }
 
 .product-thumb--contain .product-thumb-overlay {
@@ -97,19 +103,22 @@ font-weight: 400;
 .product-thumb--contain:hover .product-thumb-overlay {
   opacity: 1;
 }
+
 /* INDIVIDUAL GALLERIES */
- .page_s1-title-contain.single {
-     margin: 0 auto 20px auto;
+.page_s1-title-contain.single {
+  margin: 0 auto 20px auto;
 }
- .gallery_pg_cat-title.single {
-     font-family: 'Roboto Slab', sans-serif;
-     color: #ef5268;
-     font-size: 1.15em;
-     line-height: 1.15em;
-     text-align: center;
-     text-transform: none;
-     padding: .45em 0 1em;
+
+.gallery_pg_cat-title.single {
+  font-family: 'Roboto Slab', sans-serif;
+  color: #ef5268;
+  font-size: 1.15em;
+  line-height: 1.15em;
+  text-align: center;
+  text-transform: none;
+  padding: .45em 0 1em;
 }
+
 /* FAQ */
 .accordion-contain {
   max-width: 700px;
@@ -126,12 +135,12 @@ font-weight: 400;
   outline: none;
   transition: 0.4s;
   margin: 10px 0 0 0;
-font-weight: 400;
+  font-weight: 400;
 }
 
 .accordion p {
   margin-bottom: 0;
-float: left;
+  float: left;
 }
 
 .active, .accordion:hover {
@@ -139,6 +148,7 @@ float: left;
   color: #ffffff;
   border-bottom: solid 3px #ef525a;
 }
+
 .accordion:after {
   content: '';
   display: block;
@@ -159,7 +169,6 @@ float: left;
   margin-left: 5px;
   background: url('../images/chevron-up.png') center no-repeat;
   background-size: contain;
-
 }
 
 .panel {
@@ -170,79 +179,76 @@ float: left;
 }
 
 .panel p {
-margin: 20px;
+  margin: 20px;
 }
 
-
 /* ORDER FORM */
-
-
 .nf-form-fields-required {
-text-align: center;
-font-size: .85rem;
+  text-align: center;
+  font-size: .85rem;
 }
 
 #ninja_forms_required_items, .nf-field-container {
-margin-bottom: 0!important;
+  margin-bottom: 0 !important;
 }
 
 .nf-field-label label {
-font-weight: 400!important;
+  font-weight: 400 !important;
 }
 
 .nf-field-label label a {
   color: #ef525a;
-border-bottom-color: #ef525a;
+  border-bottom-color: #ef525a;
 }
 
 .nf-field-label label a:hover {
   color: #ef525a;
-border-bottom-color: transparent;
+  border-bottom-color: transparent;
 }
 
 .nf-field-element input, .nf-field-element select, .nf-field-element textarea {
-    margin: 0;
-    width: auto;
-    padding: 7px 10px;
-    height: auto;
-    border-radius: 5px;
-    vertical-align: inherit;
+  margin: 0;
+  width: auto;
+  padding: 7px 10px;
+  height: auto;
+  border-radius: 5px;
+  vertical-align: inherit;
 }
+
 .nf-field-label label {
-    font-weight: 700;
-    margin: 0;
-    padding: 0;
-    flex-direction: row;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  flex-direction: row;
 }
+
 select.nf-element {
-    height: 38px;
+  height: 38px;
 }
 
 input[type=button].nf-element {
-
-      padding: 20px 30px 23px;
-      border-style: none;
-      border-width: 3px;
-      border-color: #ebebeb;
-      border-radius: 3px;
-      background-color: #ef525a;
-      box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.55);
-      font-family: 'Roboto Slab', sans-serif;
-      color: #fff;
-      font-size: 1.9em;
-      line-height: 1.1em;
-      font-weight: 300;
-      text-align: center;
-      letter-spacing: 0.025em;
-      text-transform: none;
-
-    }
+  padding: 20px 30px 23px;
+  border-style: none;
+  border-width: 3px;
+  border-color: #ebebeb;
+  border-radius: 3px;
+  background-color: #ef525a;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.55);
+  font-family: 'Roboto Slab', sans-serif;
+  color: #fff;
+  font-size: 1.9em;
+  line-height: 1.1em;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.025em;
+  text-transform: none;
+}
 
 input[type=button].nf-element:hover {
-background-color: #ffffff;
-color: #ef525a;
+  background-color: #ffffff;
+  color: #ef525a;
 }
 
 .submit-wrap, .nf-after-form-content {
-text-align: center;
+  text-align: center;
 }
