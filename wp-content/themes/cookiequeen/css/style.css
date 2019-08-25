@@ -126,10 +126,12 @@ font-weight: 400;
   outline: none;
   transition: 0.4s;
   margin: 10px 0 0 0;
+font-weight: 400;
 }
 
 .accordion p {
   margin-bottom: 0;
+float: left;
 }
 
 .active, .accordion:hover {
@@ -233,7 +235,7 @@ input[type=button].nf-element {
       text-align: center;
       letter-spacing: 0.025em;
       text-transform: none;
-  
+
     }
 
 input[type=button].nf-element:hover {

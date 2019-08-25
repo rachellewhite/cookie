@@ -35,14 +35,24 @@ if( have_rows('specials_layout') ):
 
           $title = get_sub_field('set_title');
           $img = get_sub_field('set_image');
+          $thumb = esc_url($img['sizes']['thumbnail']);
           $price = get_sub_field('set_price');
           $descrip = get_sub_field('set_description');
+
 
         ?>
         <div class="special-item">
 
           <div class="special-id"><?php echo $title; ?></div>
-          <img src="<?php echo $img['url']; ?>" alt="" class="special-img">
+
+
+        <a href="<?php echo $img['url']; ?>" data-fancybox class="special-img">
+
+        <img src="<?php echo $thumb; ?>" alt="">
+
+        </a>
+
+
           <div class="special-price"><?php echo $price; ?></div>
           <div class="special-descrip"><?php echo $descrip; ?></div>
         </div>
