@@ -11,7 +11,18 @@
     <h1 class="page-heading"><?php the_title(); ?></h1>
       <p class="specials-summary"><?php the_field('specials_page_description'); ?>
       </p>
+<?php if ( have_rows( 'button' ) ) : ?>
+      <div class="order-buttons">
+              <?php while ( have_rows( 'button' ) ) : the_row(); ?>
+                    <a href="<?php the_sub_field( 'button_link' ); ?>" class="button melon small w-button order"><?php the_sub_field( 'button_text' ); ?></a>
+              <?php endwhile; endif; ?>
+      </div>
+
     </div>
+
+
+
+
 
 <?php
 

@@ -84,10 +84,7 @@ body {
   margin-bottom: 0;
 }
 
-/* GALLERY/GALLERIES */
-.fancybox-navigation .fancybox-button:hover {
-  border: none;
-}
+
 
 .size-300x300.wp-post-image {
   border: 15px solid #fff;
@@ -117,6 +114,12 @@ body {
   text-align: center;
   text-transform: none;
   padding: .45em 0 1em;
+}
+
+/* SPECIALS TEMPLATE */
+.special-descrip ul {
+  padding-left: 20px;
+
 }
 
 /* FAQ */

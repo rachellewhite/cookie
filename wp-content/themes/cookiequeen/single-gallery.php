@@ -11,7 +11,7 @@
 
   <h1 class="page-heading"><?php the_title(); ?></h1>
 
-<p class="gallery-summary-text"><?php the_field('gallery_text'); ?></p>
+<div class="gallery-summary-text"><?php the_field('gallery_text'); ?></div>
 
 
 
@@ -43,7 +43,7 @@
         <?php if ( has_post_thumbnail() ): ?>
 
           <div class="product-contain">
-            <a href="<?= $featured_img_url ?>" class="single" data-fancybox="gallery">
+            <a href="<?= $featured_img_url ?>" data-fancybox="gallery">
               <div class="product-thumb--contain w-clearfix">
                 <div class="product-thumb-overlay"><img src="<?= get_template_directory_uri(); ?>/images/zoom.png" alt="" class="zoom"></div>
               <?php the_post_thumbnail(array(300,300)); // Declare pixel size you need inside the array ?>
