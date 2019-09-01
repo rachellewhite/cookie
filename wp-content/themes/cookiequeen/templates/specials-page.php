@@ -9,8 +9,8 @@
   <div class="specials-contain">
     <div class="order-header-holder">
     <h1 class="page-heading"><?php the_title(); ?></h1>
-      <p class="specials-summary"><?php the_field('specials_page_description'); ?>
-      </p>
+      <div class="specials-summary"><?php the_field('specials_page_description'); ?>
+      </div>
 <?php if ( have_rows( 'button' ) ) : ?>
       <div class="order-buttons">
               <?php while ( have_rows( 'button' ) ) : the_row(); ?>
