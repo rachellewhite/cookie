@@ -10,6 +10,12 @@ body {
   height: 100%;
 }
 
+@media (max-width: 1024px) {
+  .body.home.page {
+    background-size: auto;
+  }
+}
+
 /* NAV */
 .main-navlink-contain {
   flex-basis: 75%;
@@ -20,6 +26,11 @@ body {
   .main-navlink-block {
     max-width: 991px !important;
   }
+}
+
+.breadcrumb {
+  font-weight: 400;
+  letter-spacing: 1px;
 }
 
 /* HOMEPAGE */

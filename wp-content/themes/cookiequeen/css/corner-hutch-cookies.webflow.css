@@ -1856,6 +1856,9 @@ em {
 }
 
 @media (max-width: 991px) {
+  .body.home.page {
+    background-size: auto;
+  }
   .main-navbar {
     position: absolute;
     left: 0%;

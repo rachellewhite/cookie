@@ -1,6 +1,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js" data-wf-page="5b3d158e82ecaec646022c4d" data-wf-site="5b3d158e82ecaeac2c022c4c">
 <head>
+
   <meta charset="utf-8">
 		<title><?php bloginfo( 'name' ); ?>  <?php wp_title('|'); ?></title>
 
@@ -16,6 +17,7 @@
 </head>
 
 <body <?php body_class("body"); ?>>
+
   <div class="global_site--contain">
         <div class="global--content--contain">
 
