@@ -22,6 +22,25 @@
             "delay": 0
         },
         {
+            "key": "field_5d585a6ba43c2",
+            "label": "Form Intro",
+            "name": "form_intro",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "default_value": "",
+            "delay": 0
+        },
+        {
             "key": "field_5d13891e767c6",
             "label": "Left Bar",
             "name": "left_bar",
@@ -94,33 +113,12 @@
                             "maxlength": ""
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "key": "field_5d1389fa93b90",
-            "label": "Notes about ordering:",
-            "name": "order_info_list",
-            "type": "repeater",
-            "instructions": "Add text that will go in the \"Notes about ordering\" section.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
+                },
                 {
-                    "key": "field_5d138a0993b91",
-                    "label": "Note",
-                    "name": "order_info_text",
-                    "type": "textarea",
+                    "key": "field_5d6d13371cf1b",
+                    "label": "Order Info List",
+                    "name": "order_info_list",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -129,11 +127,32 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_5d6d13541cf1c",
+                            "label": "Order Info Text",
+                            "name": "order_info_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ]
                 }
             ]
         }
@@ -155,5 +174,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1561561914
+    "modified": 1567429521
 }
